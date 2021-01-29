@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 from controllers.stock_controller import stock_blueprint
 
-appe = Flask(__name__)
+app = Flask(__name__)
 
 app.register_blueprint(stock_blueprint)
 

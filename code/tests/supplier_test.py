@@ -8,7 +8,7 @@ class TestSupplier(unittest.TestCase):
 
 
     def test_supplier_has_name(self):
-        self.assertEqual("Dunns", self.supplier.name)
+        self.assertEqual("Dunns", self.supplier.supplier_name)
 
     def test_supplier_has_contact_info(self):
         self.assertEqual("0141 123456", self.supplier.contact_info)
