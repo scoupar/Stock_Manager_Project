@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{%block content%}
+<form action="/products" method="post">
+
+    <div>
+        <label for="product_name">Product Name:</label>
+        <input type ="text" id="product_name" name="product_name" placeholder="Name" required autofocus>
+    </div>
+
+    <div>
+        <label for="details">Details:</label>
+        <input type ="text" id="details" name="details" placeholder="details" required autofocus>
+    </div>
+
+    <div>
+        <label for="stock_quantity">Current Stock Quantity:</label>
+        <input type ="number" id="stock_quantity" name="stock_quantity" required autofocus>
+    </div>
+
+    <div>
+        <label for="buying_cost">Cost from Supplier:</label>
+        <input type ="number" step="any" id="buying_cost" name="buying_cost" required autofocus>
+    </div>
+
+    <div>
+        <label for="selling_price">Price Sold:</label>
+        <input type ="number" step="any" id="selling_price" name="selling_price" required autofocus>
+    </div>
+
+    <div>
+        <label for="Supplier">Supplier:</label>
+        <select id="supplier" name="supplier_id">
+            {%  for supplier in all_suppliers %}
+            <option value="{{supplier.id }}">{{supplier.supplier_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</form>
+{% endblock%}

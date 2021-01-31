@@ -37,3 +37,13 @@ def update(supplier):
     sql ="UPDATE suppliers SET (supplier_name, contact_info, notes) = (%s, %s, %s) WHERE id =%s"
     values = [supplier.supplier_name, supplier.contact_info, supplier.notes]
     run_sql(sql, values)
+
+def products(supplier):
+    products = []
+    sql ="SELECT * FROM products WHERE supplier_id =%s"
+    values = [supplier.id]
+    results = run_sql(sql, values)
+    for row in results:
+        product = Product(row['product_name'], row['details'], row['stock_quantity'], row['buying_cost'], row['selling_price'], supplier)
+        products.append(product)
+    return products

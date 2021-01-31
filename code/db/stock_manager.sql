@@ -11,7 +11,7 @@ CREATE TABLE suppliers (
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     product_name VARCHAR(255),
-    description VARCHAR(255),
+    details VARCHAR(255),
     stock_quantity INT,
     buying_cost FLOAT, 
     selling_price FLOAT,

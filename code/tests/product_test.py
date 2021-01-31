@@ -9,8 +9,8 @@ class TestProduct(unittest.TestCase):
     def test_product_has_name(self):
         self.assertEqual("Burger", self.product.product_name)
 
-    def test_product_has_description(self):
-        self.assertEqual("6oz Beef Patty", self.product.description)
+    def test_product_has_details(self):
+        self.assertEqual("6oz Beef Patty", self.product.details)
         
     def test_product_has_stock_quantity(self):
         self.assertEqual(50, self.product.stock_quantity)
