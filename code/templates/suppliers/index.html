@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table id="supplier_list">
+    <thead> 
+        <tr>
+            <th>Name</th>
+            <th>Contact Info</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    {% for supplier in all_suppliers %}
+    <tbody>
+        <tr>
+            <td>{{supplier.supplier_name}}</td>
+            <td>{{supplier.contact_info}}</td>
+            <td>{{supplier.notes}}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+
+{% endblock %}

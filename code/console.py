@@ -8,19 +8,22 @@ import repositories.supplier_repository as supplier_repository
 supplier_repository.delete_all()
 product_repository.delete_all()
 
-# supplier1 = Supplier("Dunns", "0141 1234567", "must order before 5PM")
-# supplier_repository.save(supplier1)
+supplier1 = Supplier("Dunns", "0141 1234567", "must order before 5PM")
+supplier_repository.save(supplier1)
 
-# supplier2 = Supplier("Rodgers", "0141 234546", "no deliveries on a Sunday")
-# supplier_repository.save(supplier2)
+supplier2 = Supplier("Rodgers", "0141 234546", "no deliveries on a Sunday")
+supplier_repository.save(supplier2)
 
 # print(supplier_repository.select_all())
 
-# print(supplier_repository.select(15))
+# print(supplier_repository.select(3))
 
 
-# product1 = Product("Burger", "6oz Beef Patty", 50, 1.99, 2.48, supplier2)
-# product_repository.save(product1)
+product1 = Product("Burger", "6oz Beef Patty", 50, 1.99, 2.48, supplier2)
+product_repository.save(product1)
+
+product2 = Product("Bun", "Brioche burger bun", 50, 0.79, 1.20, supplier2)
+product_repository.save(product2)
 
 # print(product_repository.select_all())
 # print(product_repository.select(14))

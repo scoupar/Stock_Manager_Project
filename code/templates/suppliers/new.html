@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="/suppliers" method ="post">
+    <div>
+        <label for="supplier_name"> Name:</label>
+        <input type="text" id="supplier_name" name="supplier_name" placeholder="Name" required autofocus>
+    </div>
+
+    <div>
+        <label for="contact_info">Contact Info:</label>
+        <input type ="text" id="contact_info" name="contact_info" placeholder= "Phone or website" required autofocus>
+    </div>
+
+    <div>
+        <label for="notes">Notes:</label>
+        <input type="text" id="notes", name="notes" placeholder ="Any additional info">
+    </div>
+    <button type="submit">Add Supplier</button>
+
+</form>
+
+{% endblock %}

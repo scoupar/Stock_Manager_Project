@@ -17,7 +17,17 @@ def new_product():
     suppliers = supplier_repository.select_all()
     return render_template("products/new.html", all_suppliers = suppliers)
 
-# @products_blueprint.route("/products", methods =['POST'])
-# def create_product():
+@products_blueprint.route("/products", methods =['POST'])
+def create_product():
+    product_name = request.form['product_name']
+    details = request.form['details']
+    stock_quantity = request.form['stock_quantity']
+    buying_cost = request.form['buying_cost']
+    selling_price = request.form['selling_price']
+    supplier = supplier_repository.select(request.form['supplier_id'])
+    product = Product(product_name, details, stock_quantity, buying_cost, selling_price, supplier)
+    product_repository.save(product)
+    return redirect ('/products')
+
 
 

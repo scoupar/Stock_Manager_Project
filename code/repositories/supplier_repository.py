@@ -20,7 +20,7 @@ def select_all():
     sql = "SELECT * FROM suppliers"
     results = run_sql(sql)
     for row in results:
-        supplier = Supplier(row['supplier_name'], row['contact_info'], row['id'])
+        supplier = Supplier(row['supplier_name'], row['contact_info'], row['notes'], row['id'])
         suppliers.append(supplier)
     return suppliers
 

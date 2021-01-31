@@ -1,4 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>list all products here!</h1>
+
+
+
+<table id="product_list">
+    <thead> 
+        <tr>
+            <th>Product</th>
+            <th>Details</th>
+            <th>Stock Quantity</th>
+            <th>Buying Cost</th>
+            <th>Selling Price</th>
+            <th>Supplier</th>
+        </tr>
+    </thead>
+    {% for product in all_products%}
+    <tbody>
+        <tr>
+            <td>{{product.product_name}}</td>
+            <td>{{product.details}}</td>
+            <td>{{product.stock_quantity}}</td>
+            <td>{{product.buying_cost}}</td>
+            <td>{{product.selling_price}}</td>
+            <td>{{product.supplier.supplier_name}}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+
+</table>
+
+
+
+
+
+
 {% endblock %}
