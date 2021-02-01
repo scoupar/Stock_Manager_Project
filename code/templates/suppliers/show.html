@@ -1,24 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<table id="supplier_list">
-    <thead> 
+<table>
+    <thead>
         <tr>
             <th>Name</th>
             <th>Contact Info</th>
             <th>Notes</th>
             <th>Edit</th>
-        </tr>
+        </tr>        
     </thead>
-    {% for supplier in all_suppliers %}
     <tbody>
         <tr>
             <td>{{supplier.supplier_name}}</td>
             <td>{{supplier.contact_info}}</td>
             <td>{{supplier.notes}}</td>
-            <td><a href='/suppliers/{{supplier.id}}/edit'>Edit</a></td>
+            <td><a href="/suppliers/{{supplier.id}}/edit">Edit</a></td>
         </tr>
     </tbody>
-    {% endfor %}
+</table>
 
 {% endblock %}

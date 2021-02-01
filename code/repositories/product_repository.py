@@ -13,9 +13,6 @@ def save(product):
     product.id = id
     return product
 
-def delete_all():
-    sql ="DELETE FROM products"
-    run_sql(sql)
 
 def select_all():
     products =[]
@@ -23,7 +20,7 @@ def select_all():
     results = run_sql(sql)
     for row in results:
         supplier = supplier_repository.select(row['supplier_id'])
-        product = Product(row['product_name'], row['details'], row['stock_quantity'], row['buying_cost'], row['selling_price'], supplier)
+        product = Product(row['product_name'], row['details'], row['stock_quantity'], row['buying_cost'], row['selling_price'], supplier, row['id'])
         products.append(product)
     return products
 
@@ -34,10 +31,14 @@ def select(id):
     result = run_sql(sql, values)[0]
     if result is not None:
         supplier = supplier_repository.select(result['supplier_id'])
-        product = Product(result['product_name'], result['details'], result['stock_quantity'], result['buying_cost'], result['selling_price'], supplier)
+        product = Product(result['product_name'], result['details'], result['stock_quantity'], result['buying_cost'], result['selling_price'], supplier, result['id'])
     return product
+
+def delete_all():
+    sql ="DELETE FROM products"
+    run_sql(sql)
 
 def update(product):
     sql = "UPDATE products SET (product_name, details, stock_quantity, buying_cost, selling_price, supplier_id) = (%s, %s, %s, %s, %s, %s) WHERE id =%s"
-    values = [product.product_name, product.details, product.stock_quantity, product.buying_cost, product.selling_price, product.supplier.id]
+    values = [product.product_name, product.details, product.stock_quantity, product.buying_cost, product.selling_price, product.supplier.id, product.id]
     run_sql(sql, values)

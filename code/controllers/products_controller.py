@@ -29,5 +29,25 @@ def create_product():
     product_repository.save(product)
     return redirect ('/products')
 
+@products_blueprint.route("/products/<id>", methods = ['GET'])
+def show_product(id):
+    product = product_repository.select(id)
+    return render_template('products/show.html', product = product)
 
+@products_blueprint.route("/products/<id>/edit", methods =["GET"])
+def edit_product(id):
+    product = product_repository.select(id)
+    suppliers = supplier_repository.select_all()
+    return render_template('products/edit.html', product =product, all_suppliers = suppliers)
 
+@products_blueprint.route("/products/<id>", methods =['POST'])
+def update_product(id):
+    product_name = request.form['product_name']
+    details = request.form['details']
+    stock_quantity = request.form['stock_quantity']
+    buying_cost = request.form['buying_cost']
+    selling_price = request.form['selling_price']
+    supplier = supplier_repository.select(request.form['supplier_id'])
+    product = Product(product_name, details, stock_quantity, buying_cost, selling_price, supplier, id)
+    product_repository.update(product)
+    return redirect('/products')

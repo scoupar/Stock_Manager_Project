@@ -30,12 +30,12 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        supplier = Supplier(result['supplier_name'], result['contact_info'], result['id'])
+        supplier = Supplier(result['supplier_name'], result['contact_info'], result['notes'], result['id'])
     return supplier
 
 def update(supplier):
     sql ="UPDATE suppliers SET (supplier_name, contact_info, notes) = (%s, %s, %s) WHERE id =%s"
-    values = [supplier.supplier_name, supplier.contact_info, supplier.notes]
+    values = [supplier.supplier_name, supplier.contact_info, supplier.notes, supplier.id]
     run_sql(sql, values)
 
 def products(supplier):

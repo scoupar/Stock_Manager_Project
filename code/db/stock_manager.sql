@@ -15,5 +15,5 @@ CREATE TABLE products (
     stock_quantity INT,
     buying_cost FLOAT, 
     selling_price FLOAT,
-    supplier_id INT REFERENCES suppliers(id) ON DELETE CASCADE
+    supplier_id INT REFERENCES suppliers(id)
 );
