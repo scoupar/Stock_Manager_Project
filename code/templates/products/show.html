@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<table>
+<table class = "table"> 
     <thead> 
         <tr>
             <th>Product</th>
@@ -9,6 +9,7 @@
             <th>Buying Cost</th>
             <th>Selling Price</th>
             <th>Supplier</th>
+            <th>DELETE</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
             <td>{{product.buying_cost}}</td>
             <td>{{product.selling_price}}</td>
             <td>{{product.supplier.supplier_name}}</td>
+            <td><form action="/products/{{product.id}}/delete" method="POST"><button type = "submit" class="delete">DELETE</button></form></td>
         </tr>
 
     </tbody>

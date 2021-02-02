@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<table>
+
+<h1>{{supplier.supplier_name}}</h1>
+
+<table class="table">
     <thead>
         <tr>
             <th>Name</th>
             <th>Contact Info</th>
             <th>Notes</th>
-            <th>Edit</th>
+            <th>DELETE</th>
+            
         </tr>        
     </thead>
     <tbody>
@@ -15,9 +19,11 @@
             <td>{{supplier.supplier_name}}</td>
             <td>{{supplier.contact_info}}</td>
             <td>{{supplier.notes}}</td>
-            <td><a href="/suppliers/{{supplier.id}}/edit">Edit</a></td>
+            <td><form action="/suppliers/{{supplier.id}}/delete" method="POST"><button type = "submit", class ="delete">DELETE</button></form></td>
+            
         </tr>
     </tbody>
 </table>
+
 
 {% endblock %}

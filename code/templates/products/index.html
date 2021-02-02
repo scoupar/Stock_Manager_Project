@@ -1,35 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h1>STOCK LIST</h1>
 
-
-<table id="product_list">
+<table class="table">
     <thead> 
         <tr>
             <th>Product</th>
             <th>Details</th>
             <th>Stock Quantity</th>
-            <th>Buying Cost</th>
-            <th>Selling Price</th>
+            <th>Buying Cost (£)</th>
+            <th>Selling Price (£)</th>
+            <th>Mark-up (£)</th>
             <th>Supplier</th>
             <th>Edit</th>
+            <th id="stock_level" >Stock Level</th>
         </tr>
     </thead>
     {% for product in all_products%}
     <tbody>
         <tr>
-            <td>{{product.product_name}}</td>
+            <td><a href=products/{{product.id}}>{{product.product_name}}</a></td>
             <td>{{product.details}}</td>
             <td>{{product.stock_quantity}}</td>
             <td>{{product.buying_cost}}</td>
             <td>{{product.selling_price}}</td>
+            <td>{{product.markup(product.buying_cost, product.selling_price)}}</td>
             <td>{{product.supplier.supplier_name}}</td>
             <td><a href="/products/{{product.id}}/edit">Edit</a></td>
+            {% if product.stock_quantity == 0 %}
+            <td id="out_of_stock">OUT OF STOCK</td>
+            {% endif %}
+            {% if product.stock_quantity >= 6%}
+            <td id= "in_stock">IN STOCK</td>
+            {% endif %}
+            {% if product.stock_quantity <= 5 and product.stock_quantity != 0%}
+            <td id="low_stock">LOW IN STOCK</td>
+            {% endif %}
+            
+            
+            
         </tr>
     </tbody>
     {% endfor %}
 
 </table>
+
 
 
 

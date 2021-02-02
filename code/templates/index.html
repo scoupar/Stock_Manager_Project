@@ -2,7 +2,31 @@
 
 {% block content %}
 
-<h1>There will be some content here. Maybe show all currently out of stock items?</h1>
+<div id="welcome">
+    <p>Welcome to the stock manager! All out of stock products appear on this page, please use the menu above to see the full stock list and all product and supplier details</p>
+</div>
+
+<table class="table">
+    <thead>
+        <th>Product</th>
+        <th>Supplier</th>
+        <th id="stock_level">Stock Level</th>
+    </thead>
+    {% for product in all_products %}
+    {%if product.stock_quantity == 0%}
+    <tbody>
+        <tr>
+            <td>{{product.product_name}}</td>
+            <td>{{product.supplier.supplier_name}}</td>
+            <td id="out_of_stock">OUT OF STOCK</td>
+    
+        </tr>
+    </tbody>
+    {% endif %}
+    {% endfor %}
+</table>
+
+
 
 {% endblock %}
 

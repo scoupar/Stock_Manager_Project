@@ -1,16 +1,31 @@
 body{
     background-image: url('images/kitchen.jpg');
     background-size: cover;
+}
 
+nav{
+    background-color:rgb(189, 139, 45);
+    opacity: 85%;
+    padding:20px;
+    margin-bottom:10px;
+    width:100%;
+    margin-left:none;
 }
 
 .menu li {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color:rgb(247, 247, 247);
+    color:black;
+    padding:10px;
     display: block;
     text-decoration: none;
     margin-left:auto;
     margin-right:auto;
+    
+}
+
+a:visited{
+    color:black;
 }
 
 .menu{
@@ -20,20 +35,90 @@ body{
     justify-content: space-between;
 }
 
-
-#product_list{
-    background-color:white;
-    
-
-}
-
-td, th{
+table, th, td{
+    margin-left:auto;
+    margin-right:auto;
+    width:75%;
+    justify-self: center;
     border: 1px solid black;
-    padding: 0.5rem;
+    background-color: white;
     border-collapse: collapse;
+}
+th{
+    padding:5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+td{
+    text-align:center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding:10px;
+}
+
+
+form{
+    text-align:center;
+    background-color:white;
+    margin:0;
+}
+input{
+    width:20%;
+    padding:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+#stock_quantity{
+    width:50px;
+}
+
+#buying_cost{
+    width:50px;
+}
+
+#selling_price{
+    width:50px;
+}
+
+button{
+    margin:10px;
+}
+
+
+#out_of_stock{
+    background-color: red;
+    padding:10px;
+}
+
+#low_stock{
+    background-color:orange;
+    padding:10px;
+}
+
+.delete{
+    background-color:red;
+    color:white;
+    border:none;
+}
+
+#in_stock{
+    background-color:green;
+    padding:10px;
+}
+
+h1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align:center;
+    background-color:white;
+    margin-left:auto;
+    margin-right:auto;
 
 }
 
-#supplier_list{
-    background-color:white
+#welcome{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align:center;
+    background-color:white;
+    padding:10px;
+    margin:10px;
 }

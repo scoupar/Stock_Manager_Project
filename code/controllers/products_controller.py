@@ -51,3 +51,23 @@ def update_product(id):
     product = Product(product_name, details, stock_quantity, buying_cost, selling_price, supplier, id)
     product_repository.update(product)
     return redirect('/products')
+
+@products_blueprint.route("/products/<id>/delete", methods =['POST'])
+def delete_product(id):
+    product_repository.delete(id)
+    return redirect('/products')
+
+@products_blueprint.route("/products", methods = ['POST'])
+def update_stock(id):
+    stock_quantity = request.form['stock_quantity']
+    product = Product(product_name, details, stock_quantity, buying_cost, selling_price, supplier, id)
+    product_repository.update_stock(product)
+    return redirect('/products')
+
+
+@products_blueprint.route("/", methods =['GET'])
+def out_of_stock():
+    products = product_repository.select_all()
+    return render_template("index.html", all_products = products)
+
+

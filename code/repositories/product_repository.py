@@ -38,7 +38,17 @@ def delete_all():
     sql ="DELETE FROM products"
     run_sql(sql)
 
+def delete(id):
+    sql = "DELETE FROM products WHERE id =%s"
+    values =[id]
+    run_sql(sql, values)
+
 def update(product):
     sql = "UPDATE products SET (product_name, details, stock_quantity, buying_cost, selling_price, supplier_id) = (%s, %s, %s, %s, %s, %s) WHERE id =%s"
     values = [product.product_name, product.details, product.stock_quantity, product.buying_cost, product.selling_price, product.supplier.id, product.id]
+    run_sql(sql, values)
+
+def update_stock(product):
+    sql = "UPDATE products SET (stock_quantity) = (%s) WHERE id =%s"
+    values = [product.stock_quantity]
     run_sql(sql, values)
