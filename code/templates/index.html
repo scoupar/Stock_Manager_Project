@@ -2,29 +2,35 @@
 
 {% block content %}
 
-<div id="welcome">
-    <p>Welcome to the stock manager! All out of stock products appear on this page, please use the menu above to see the full stock list and all product and supplier details</p>
-</div>
+<head>
+    <div id="welcome">
+        <p>Welcome to the stock manager!</p>
+        <p>Please use the menu above to see the full stock list and all product and supplier details.</p>
+    </div>
+</head>
+<body>
+    <h1 id="out_stock">OUT OF STOCK ITEMS</h1>
+    <table class="table">
+        <thead>
+            <th>Product</th>
+            <th>Supplier</th>
+            <th id="stock_level">Stock Level</th>
+        </thead>
+        {% for product in all_products %}
+        {%if product.stock_quantity == 0%}
+        <tbody>
+            <tr>
+                <td>{{product.product_name}}</td>
+                <td>{{product.supplier.supplier_name}}</td>
+                <td id="out_of_stock">OUT OF STOCK</td>
+        
+            </tr>
+        </tbody>
+        {% endif %}
+        {% endfor %}
+    </table>
+</body>
 
-<table class="table">
-    <thead>
-        <th>Product</th>
-        <th>Supplier</th>
-        <th id="stock_level">Stock Level</th>
-    </thead>
-    {% for product in all_products %}
-    {%if product.stock_quantity == 0%}
-    <tbody>
-        <tr>
-            <td>{{product.product_name}}</td>
-            <td>{{product.supplier.supplier_name}}</td>
-            <td id="out_of_stock">OUT OF STOCK</td>
-    
-        </tr>
-    </tbody>
-    {% endif %}
-    {% endfor %}
-</table>
 
 
 

@@ -38,15 +38,7 @@ def update(supplier):
     values = [supplier.supplier_name, supplier.contact_info, supplier.notes, supplier.id]
     run_sql(sql, values)
 
-def products(supplier):
-    products = []
-    sql ="SELECT * FROM products WHERE supplier_id =%s"
-    values = [supplier.id]
-    results = run_sql(sql, values)
-    for row in results:
-        product = Product(row['product_name'], row['details'], row['stock_quantity'], row['buying_cost'], row['selling_price'], supplier, row['id'])
-        products.append(product)
-    return products
+
 
 def delete(id):
     sql = "DELETE FROM suppliers WHERE id =%s"

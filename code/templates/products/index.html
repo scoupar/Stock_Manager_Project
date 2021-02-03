@@ -27,15 +27,15 @@
             <td>{{product.selling_price}}</td>
             <td>{{product.markup(product.buying_cost, product.selling_price)}}</td>
             <td>{{product.supplier.supplier_name}}</td>
-            <td><a href="/products/{{product.id}}/edit">Edit</a></td>
+            <td><a href="/products/{{product.id}}/edit"><button type="submit">Edit</button></a></td>
             {% if product.stock_quantity == 0 %}
             <td id="out_of_stock">OUT OF STOCK</td>
             {% endif %}
-            {% if product.stock_quantity >= 6%}
+            {% if product.stock_quantity >= 11 %}
             <td id= "in_stock">IN STOCK</td>
             {% endif %}
-            {% if product.stock_quantity <= 5 and product.stock_quantity != 0%}
-            <td id="low_stock">LOW IN STOCK</td>
+            {% if product.stock_quantity <= 10 and product.stock_quantity != 0 %}
+            <td id="low_stock">LOW STOCK</td>
             {% endif %}
             
             

@@ -1,10 +1,10 @@
 body{
-    background-image: url('images/kitchen.jpg');
-    background-size: cover;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color:rgb(255, 255, 255);
+    
 }
 
 nav{
-    background-color:rgb(189, 139, 45);
     opacity: 85%;
     padding:20px;
     margin-bottom:10px;
@@ -14,14 +14,19 @@ nav{
 
 .menu li {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color:rgb(247, 247, 247);
+    background-color:rgb(255, 255, 255);
     color:black;
     padding:10px;
     display: block;
     text-decoration: none;
     margin-left:auto;
     margin-right:auto;
+    border:2px solid black;
+    border-radius: 5px;
     
+}
+a{
+    color:black;
 }
 
 a:visited{
@@ -40,26 +45,26 @@ table, th, td{
     margin-right:auto;
     width:75%;
     justify-self: center;
-    border: 1px solid black;
-    background-color: white;
+    border: 3px solid black;
+    background-color: rgb(255, 255, 255);
     border-collapse: collapse;
 }
 th{
     padding:5px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 td{
     text-align:center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding:10px;
 }
 
 
 form{
     text-align:center;
-    background-color:white;
+    background-color:rgb(255, 255, 255);
     margin:0;
+    border:2px solid black;
+    padding:10px;
 }
 input{
     width:20%;
@@ -86,39 +91,52 @@ button{
 
 
 #out_of_stock{
-    background-color: red;
+    background-color:rgb(156, 15, 15);
     padding:10px;
+    color:white;
 }
 
 #low_stock{
     background-color:orange;
     padding:10px;
+    color:white;
 }
 
 .delete{
-    background-color:red;
+    background-color:rgb(156, 15, 15);
     color:white;
     border:none;
+    
 }
+
+
 
 #in_stock{
     background-color:green;
     padding:10px;
+    color:white;
 }
 
 h1{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align:center;
-    background-color:white;
+    background-color:rgb(255, 255, 255);
     margin-left:auto;
     margin-right:auto;
+    border:2px solid black;
 
 }
 
 #welcome{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align:center;
-    background-color:white;
+    background-color:rgb(255, 255, 255);
     padding:10px;
     margin:10px;
+    
+}
+
+#out_stock{
+    background-color:rgb(255, 255, 255);
+    width:35%;
+    border:4px solid rgb(199, 26, 26);
+    
 }
