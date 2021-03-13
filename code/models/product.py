@@ -7,7 +7,11 @@ class Product:
         self.selling_price = selling_price
         self.supplier = supplier
         self.id = id
-
+    
+    
+    #calculate markup 
+    #difference between buying cost and selling price
+    
     def markup(self, buy_price, sell_price):
         mark_up = sell_price - buy_price
         return mark_up

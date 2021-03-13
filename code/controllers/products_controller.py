@@ -12,10 +12,18 @@ def products():
     products = product_repository.select_all()
     return render_template("products/index.html", all_products = products)
 
+
+
 @products_blueprint.route("/products/new", methods =['GET'])
 def new_product():
     suppliers = supplier_repository.select_all()
     return render_template("products/new.html", all_suppliers = suppliers)
+
+# Post request on /products route 
+#function to collect data from html form inputted by user
+#then create new instance of product class with that data
+#save new instance to 'products' table in db
+#redirect to view of table with new product added 
 
 @products_blueprint.route("/products", methods =['POST'])
 def create_product():

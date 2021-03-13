@@ -14,7 +14,7 @@ class TestSupplier(unittest.TestCase):
         self.assertEqual("0141 123456", self.supplier.contact_info)
 
     def test_supplier_has_notes(self):
-        self.assertEqual("order before 5PM", self.supplier.notes)
+        self.assertEqual("order before 4PM", self.supplier.notes)
 
     def test_supplier_id_starts_none(self):
         self.assertEqual(None, self.supplier.id)
