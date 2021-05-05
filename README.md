@@ -1,8 +1,12 @@
 # Stock_Manager_Project
-Web app to track inventory. Built with Python, Flask, HTML, CSS and PSQL
+Web app to track inventory. Built with Python, Flask, HTML, CSS and PostgreSQL. Built in 5 days during week 5 of CodeClan. 
+
+# Cloning instructions 
+
+After cloning this repo use 'flask run' in the terminal to run on localhost:5000
 
 
-# BRIEF
+# Brief
 
 ### Shop Inventory
 
