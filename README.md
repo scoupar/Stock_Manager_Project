@@ -6,6 +6,10 @@ Web app to track inventory. Built with Python, Flask, HTML, CSS and PostgreSQL. 
 After cloning this repo use 'flask run' in the terminal to run on localhost:5000
 
 
+# Video Demo 
+
+Demo available here: https://youtu.be/z43hjhUEKd0
+
 # Brief
 
 ### Shop Inventory
